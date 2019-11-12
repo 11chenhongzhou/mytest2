@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_v-on:click</title>
+    <link rel="stylesheet" href="js/index.css">
+    <script src="js/vue.js"></script>
+    <script src="js/index.js"></script>
+
+</head>
+<body>
+<div id="app">
+    {{message}}
+    <br/>
+    <el-row>
+        <el-button>默认按钮</el-button>
+        <el-button type="primary">主要按钮</el-button>
+        <el-button type="success">成功按钮</el-button>
+        <el-button type="info">信息按钮</el-button>
+        <el-button type="warning">警告按钮</el-button>
+        <el-button type="danger">危险按钮</el-button>
+    </el-row>
+    <input type="button" value="点击改变" @click="fun01"/>
+
+</div>
+<script>
+    //创建vue实例
+    new Vue({
+        //表示当前vue对象接管了div区域
+        el:'#app',
+        //定义数据
+        data:{
+            message:'hello world'
+        },
+        //定义函数
+        methods:{
+            fun01:function () {
+                this.message = '你好,世界...';
+            }
+        }
+    });
+</script>
+</body>
+</html>

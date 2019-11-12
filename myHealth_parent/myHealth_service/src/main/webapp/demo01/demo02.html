@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_v-on:click</title>
+    <link rel="stylesheet" href="js/index.css">
+    <script src="js/vue.js"></script>
+    <script src="js/index.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <el-dropdown trigger="click">
+  <span class="el-dropdown-link">
+    个人中心<i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+        <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item >退出系统</el-dropdown-item>
+            <el-dropdown-item divided>修改密码</el-dropdown-item>
+            <el-dropdown-item divided>联系管理员</el-dropdown-item>
+        </el-dropdown-menu>
+    </el-dropdown>
+    <br/>
+</div>
+<script>
+    //创建vue实例
+    new Vue({
+        //表示当前vue对象接管了div区域
+        el:'#app',
+        //定义数据
+        data:{
+            message:'hello world'
+        },
+        //定义函数
+        methods:{
+            fun01:function () {
+                this.message = '你好,世界...';
+            }
+        }
+    });
+</script>
+<style>
+    .el-dropdown-link {
+        cursor: pointer;
+        color: #409EFF;
+    }
+    .el-icon-arrow-down {
+        font-size: 12px;
+    }
+</style>
+</body>
+</html>
